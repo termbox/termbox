@@ -118,6 +118,10 @@ and questions to me: no.smile.face@gmail.com.
 
 ### Changes
 
+v1.1.3:
+
+- Tagging master as v1.1.3 before forking
+
 v1.1.2:
 
 - Properly include changelog into the tagged version commit. I.e. I messed up
