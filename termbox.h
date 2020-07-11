@@ -1,12 +1,13 @@
-#pragma once
+#ifndef __TERMBOX_H
+#define __TERMBOX_H
 
 #include <stdint.h>
 
 /* for shared objects */
 #if __GNUC__ >= 4
- #define SO_IMPORT __attribute__((visibility("default")))
+#define SO_IMPORT __attribute__((visibility("default")))
 #else
- #define SO_IMPORT
+#define SO_IMPORT
 #endif
 
 #ifdef __cplusplus
@@ -317,4 +318,6 @@ SO_IMPORT int tb_utf8_unicode_to_char(char *out, uint32_t c);
 
 #ifdef __cplusplus
 }
+#endif
+
 #endif

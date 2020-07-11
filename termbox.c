@@ -16,7 +16,6 @@
 
 #include "termbox.h"
 
-
 struct bytebuffer {
 	char *buf;
 	int len;
