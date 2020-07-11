@@ -19,43 +19,9 @@ really a thing termbox is aimed at. But rather pseudo-graphical user interfaces.
 
 ### Installation
 
-Termbox comes with a waf-based build scripts. In order to configure, build and
-install it, do the following::
+Use `make` to build and `make install` to install.
 
-```
-./waf configure --prefix=/usr                                (configure)
-./waf                                                        (build)
-./waf install --destdir=DESTDIR                              (install)
-```
-
-By default termbox will install the header file and both shared and static
-libraries. If you want to install a shared library or static library alone, use
-the following as an install command::
-
-```
-./waf install --targets=termbox_shared --destdir=PREFIX      (shared library)
-```
-
-or::
-
-```
-./waf install --targets=termbox_static --destdir=PREFIX      (static library)
-```
-
-##### Python
-
-In order to install the python module, use the following command (as root or
-via sudo)::
-
-```
-python setup.py install
-```
-
-for Python 3::
-
-```
-python3 setup.py install
-```
+The `install` target supports `prefix` and `DESTDIR` if needed.
 
 ### Getting started
 
@@ -80,7 +46,7 @@ tb_peek_event() // peek a keyboard event
 tb_poll_event() // wait for a keyboard event
 ```
 
-See src/termbox.h header file for full detail.
+See termbox.h header file for full detail.
 
 ### Links
 
@@ -110,11 +76,6 @@ a note via email, you can find my email below.
 
 - https://github.com/adsr/mle - a small, flexible terminal-based text editor
 - https://github.com/colinta/Ashen - framework for building terminal applications based on the Elm architecture
-
-### Bugs & questions
-
-Report bugs to the https://github.com/nsf/termbox issue tracker. Send rants
-and questions to me: no.smile.face@gmail.com.
 
 ### Changes
 
