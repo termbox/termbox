@@ -19,38 +19,38 @@ extern "C" {
  * These are a safe subset of terminfo keys, which exist on all popular
  * terminals. Termbox uses only them to stay truly portable.
  */
-#define TB_KEY_F1               (0xFFFF-0)
-#define TB_KEY_F2               (0xFFFF-1)
-#define TB_KEY_F3               (0xFFFF-2)
-#define TB_KEY_F4               (0xFFFF-3)
-#define TB_KEY_F5               (0xFFFF-4)
-#define TB_KEY_F6               (0xFFFF-5)
-#define TB_KEY_F7               (0xFFFF-6)
-#define TB_KEY_F8               (0xFFFF-7)
-#define TB_KEY_F9               (0xFFFF-8)
-#define TB_KEY_F10              (0xFFFF-9)
-#define TB_KEY_F11              (0xFFFF-10)
-#define TB_KEY_F12              (0xFFFF-11)
-#define TB_KEY_INSERT           (0xFFFF-12)
-#define TB_KEY_DELETE           (0xFFFF-13)
-#define TB_KEY_HOME             (0xFFFF-14)
-#define TB_KEY_END              (0xFFFF-15)
-#define TB_KEY_PGUP             (0xFFFF-16)
-#define TB_KEY_PGDN             (0xFFFF-17)
-#define TB_KEY_ARROW_UP         (0xFFFF-18)
-#define TB_KEY_ARROW_DOWN       (0xFFFF-19)
-#define TB_KEY_ARROW_LEFT       (0xFFFF-20)
-#define TB_KEY_ARROW_RIGHT      (0xFFFF-21)
-#define TB_KEY_MOUSE_LEFT       (0xFFFF-22)
-#define TB_KEY_MOUSE_RIGHT      (0xFFFF-23)
-#define TB_KEY_MOUSE_MIDDLE     (0xFFFF-24)
-#define TB_KEY_MOUSE_RELEASE    (0xFFFF-25)
-#define TB_KEY_MOUSE_WHEEL_UP   (0xFFFF-26)
-#define TB_KEY_MOUSE_WHEEL_DOWN (0xFFFF-27)
+#define TB_KEY_F1               (0xFFFF - 0)
+#define TB_KEY_F2               (0xFFFF - 1)
+#define TB_KEY_F3               (0xFFFF - 2)
+#define TB_KEY_F4               (0xFFFF - 3)
+#define TB_KEY_F5               (0xFFFF - 4)
+#define TB_KEY_F6               (0xFFFF - 5)
+#define TB_KEY_F7               (0xFFFF - 6)
+#define TB_KEY_F8               (0xFFFF - 7)
+#define TB_KEY_F9               (0xFFFF - 8)
+#define TB_KEY_F10              (0xFFFF - 9)
+#define TB_KEY_F11              (0xFFFF - 10)
+#define TB_KEY_F12              (0xFFFF - 11)
+#define TB_KEY_INSERT           (0xFFFF - 12)
+#define TB_KEY_DELETE           (0xFFFF - 13)
+#define TB_KEY_HOME             (0xFFFF - 14)
+#define TB_KEY_END              (0xFFFF - 15)
+#define TB_KEY_PGUP             (0xFFFF - 16)
+#define TB_KEY_PGDN             (0xFFFF - 17)
+#define TB_KEY_ARROW_UP         (0xFFFF - 18)
+#define TB_KEY_ARROW_DOWN       (0xFFFF - 19)
+#define TB_KEY_ARROW_LEFT       (0xFFFF - 20)
+#define TB_KEY_ARROW_RIGHT      (0xFFFF - 21)
+#define TB_KEY_MOUSE_LEFT       (0xFFFF - 22)
+#define TB_KEY_MOUSE_RIGHT      (0xFFFF - 23)
+#define TB_KEY_MOUSE_MIDDLE     (0xFFFF - 24)
+#define TB_KEY_MOUSE_RELEASE    (0xFFFF - 25)
+#define TB_KEY_MOUSE_WHEEL_UP   (0xFFFF - 26)
+#define TB_KEY_MOUSE_WHEEL_DOWN (0xFFFF - 27)
 
 /* These are all ASCII code points below SPACE character and a BACKSPACE key. */
 #define TB_KEY_CTRL_TILDE       0x00
-#define TB_KEY_CTRL_2           0x00 /* clash with 'CTRL_TILDE' */
+#define TB_KEY_CTRL_2           0x00 /* clash with 'CTRL_TILDE'     */
 #define TB_KEY_CTRL_A           0x01
 #define TB_KEY_CTRL_B           0x02
 #define TB_KEY_CTRL_C           0x03
@@ -61,12 +61,12 @@ extern "C" {
 #define TB_KEY_BACKSPACE        0x08
 #define TB_KEY_CTRL_H           0x08 /* clash with 'CTRL_BACKSPACE' */
 #define TB_KEY_TAB              0x09
-#define TB_KEY_CTRL_I           0x09 /* clash with 'TAB' */
+#define TB_KEY_CTRL_I           0x09 /* clash with 'TAB'            */
 #define TB_KEY_CTRL_J           0x0A
 #define TB_KEY_CTRL_K           0x0B
 #define TB_KEY_CTRL_L           0x0C
 #define TB_KEY_ENTER            0x0D
-#define TB_KEY_CTRL_M           0x0D /* clash with 'ENTER' */
+#define TB_KEY_CTRL_M           0x0D /* clash with 'ENTER'          */
 #define TB_KEY_CTRL_N           0x0E
 #define TB_KEY_CTRL_O           0x0F
 #define TB_KEY_CTRL_P           0x10
@@ -81,19 +81,19 @@ extern "C" {
 #define TB_KEY_CTRL_Y           0x19
 #define TB_KEY_CTRL_Z           0x1A
 #define TB_KEY_ESC              0x1B
-#define TB_KEY_CTRL_LSQ_BRACKET 0x1B /* clash with 'ESC' */
-#define TB_KEY_CTRL_3           0x1B /* clash with 'ESC' */
+#define TB_KEY_CTRL_LSQ_BRACKET 0x1B /* clash with 'ESC'            */
+#define TB_KEY_CTRL_3           0x1B /* clash with 'ESC'            */
 #define TB_KEY_CTRL_4           0x1C
-#define TB_KEY_CTRL_BACKSLASH   0x1C /* clash with 'CTRL_4' */
+#define TB_KEY_CTRL_BACKSLASH   0x1C /* clash with 'CTRL_4'         */
 #define TB_KEY_CTRL_5           0x1D
-#define TB_KEY_CTRL_RSQ_BRACKET 0x1D /* clash with 'CTRL_5' */
+#define TB_KEY_CTRL_RSQ_BRACKET 0x1D /* clash with 'CTRL_5'         */
 #define TB_KEY_CTRL_6           0x1E
 #define TB_KEY_CTRL_7           0x1F
-#define TB_KEY_CTRL_SLASH       0x1F /* clash with 'CTRL_7' */
-#define TB_KEY_CTRL_UNDERSCORE  0x1F /* clash with 'CTRL_7' */
+#define TB_KEY_CTRL_SLASH       0x1F /* clash with 'CTRL_7'         */
+#define TB_KEY_CTRL_UNDERSCORE  0x1F /* clash with 'CTRL_7'         */
 #define TB_KEY_SPACE            0x20
 #define TB_KEY_BACKSPACE2       0x7F
-#define TB_KEY_CTRL_8           0x7F /* clash with 'BACKSPACE2' */
+#define TB_KEY_CTRL_8           0x7F /* clash with 'BACKSPACE2'     */
 
 /* These are non-existing ones.
  *
@@ -103,8 +103,8 @@ extern "C" {
  */
 
 /*
- * Alt modifier constant, see tb_event.mod field and tb_select_input_mode function.
- * Mouse-motion modifier
+ * Alt modifier constant, see tb_event.mod field and tb_select_input_mode
+ * function. Mouse-motion modifier
  */
 #define TB_MOD_ALT    0x01
 #define TB_MOD_MOTION 0x02
@@ -154,9 +154,9 @@ struct tb_cell {
  */
 struct tb_event {
     uint8_t type;
-    uint8_t mod; /* modifiers to either 'key' or 'ch' below */
+    uint8_t mod;  /* modifiers to either 'key' or 'ch' below */
     uint16_t key; /* one of the TB_KEY_* constants */
-    uint32_t ch; /* unicode character */
+    uint32_t ch;  /* unicode character */
     int32_t w;
     int32_t h;
     int32_t x;
@@ -169,8 +169,8 @@ struct tb_event {
  * most cases you should just check the returned code as < 0.
  */
 #define TB_EUNSUPPORTED_TERMINAL -1
-#define TB_EFAILED_TO_OPEN_TTY   -2
-#define TB_EPIPE_TRAP_ERROR      -3
+#define TB_EFAILED_TO_OPEN_TTY -2
+#define TB_EPIPE_TRAP_ERROR -3
 
 /* Initializes the termbox library. This function should be called before any
  * other functions. Function tb_init is same as tb_init_file("/dev/tty").
@@ -178,7 +178,7 @@ struct tb_event {
  * finalized using the tb_shutdown() function.
  */
 SO_IMPORT int tb_init(void);
-SO_IMPORT int tb_init_file(const char* name);
+SO_IMPORT int tb_init_file(const char *name);
 SO_IMPORT int tb_init_fd(int inout);
 SO_IMPORT void tb_shutdown(void);
 
@@ -212,7 +212,8 @@ SO_IMPORT void tb_set_cursor(int cx, int cy);
  * position.
  */
 SO_IMPORT void tb_put_cell(int x, int y, const struct tb_cell *cell);
-SO_IMPORT void tb_change_cell(int x, int y, uint32_t ch, uint16_t fg, uint16_t bg);
+SO_IMPORT void tb_change_cell(int x, int y, uint32_t ch, uint16_t fg,
+                              uint16_t bg);
 
 /* Copies the buffer from 'cells' at the specified position, assuming the
  * buffer is a two-dimensional array of size ('w' x 'h'), represented as a
