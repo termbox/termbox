@@ -1,6 +1,6 @@
 prefix?=/usr/local
 
-termbox_cflags:=-std=c99 -Wall -Wextra -pedantic -fPIC -g -O3 -D_XOPEN_SOURCE $(CFLAGS)
+termbox_cflags:=-std=c99 -Wall -Wextra -pedantic -Wno-unused-result -fPIC -g -O3 -D_XOPEN_SOURCE $(CFLAGS)
 termbox_objects:=$(patsubst %.c,%.o,$(wildcard *.c))
 termbox_demos:=$(patsubst demo/%.c,demo/%,$(wildcard demo/*.c))
 termbox_so_version_abi:=1
