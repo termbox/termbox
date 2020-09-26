@@ -1,31 +1,20 @@
-# Termbox
+# termbox
 
-Termbox is a library that provides minimalistic API which allows the
-programmer to write text-based user interfaces.
+termbox is a minimal, legacy-free alternative to ncurses, suitable for building
+text-based user interfaces.
 
-It is based on a very simple abstraction. The main idea is viewing terminals as
-a table of fixed-size cells and input being a stream of structured
-messages. Would be fair to say that the model is inspired by windows console
-API. The abstraction itself is not perfect and it may create problems in certain
-areas. The most sensitive ones are copy & pasting and wide characters (mostly
-Chinese, Japanese, Korean (CJK) characters). When it comes to copy & pasting,
-the notion of cells is not really compatible with the idea of text. And CJK
-runes often require more than one cell to display them nicely. Despite the
-mentioned flaws, using such a simple model brings benefits in a form of
-simplicity. And KISS principle is important.
+This repo represents an effort to recentralize termbox development as the
+original repo is no longer maintained.
 
-At this point one should realize, that CLI (command-line interfaces) aren't
-really a thing termbox is aimed at. But rather pseudo-graphical user interfaces.
-
-### Installation
+### Building
 
 Use `make` to build and `make install` to install.
 
 The `install` target supports `prefix` and `DESTDIR` if needed.
 
-### Getting started
+### Usage
 
-Termbox's interface only consists of 12 functions::
+The termbox API consists of the following functions.
 
 ```
 tb_init() // initialization
@@ -46,12 +35,11 @@ tb_peek_event() // peek a keyboard event
 tb_poll_event() // wait for a keyboard event
 ```
 
-See termbox.h header file for full detail.
+See termbox.h for more details.
 
 ### Links
 
-If you want me to add your Termbox project here, send me a pull request or drop
-a note via email, you can find my email below.
+Make a pull request if you would like your termbox project listed here.
 
 ##### Language bindings
 
@@ -71,7 +59,7 @@ a note via email, you can find my email below.
 
 ##### Other implementations
 
-- https://github.com/nsf/termbox-go - Go pure Termbox implementation
+- https://github.com/nsf/termbox-go - Go pure termbox implementation
 
 ##### Applications
 
