@@ -51,7 +51,7 @@ Make a pull request if you would like your termbox project listed here.
 - https://github.com/dduan/Termbox - Swift
 - https://github.com/andrewsuzuki/termbox-crystal - Crystal
 - https://github.com/jgoldfar/Termbox.jl - Julia
-- https://github.com/mitchellwrosen/termbox - Haskell
+- https://github.com/termbox/termbox-haskell - Haskell
 - https://github.com/dom96/nimbox - Nim
 - https://github.com/ndreynolds/ex_termbox - Elixir
 - https://github.com/bmsauer/termbox-ada - Ada
