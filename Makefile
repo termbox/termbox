@@ -8,8 +8,16 @@ termbox_so_version_minor_patch:=0.0
 termbox_so:=libtermbox.so
 termbox_so_x:=$(termbox_so).$(termbox_so_version_abi)
 termbox_so_x_y_z:=$(termbox_so_x).$(termbox_so_version_minor_patch)
+termbox_ld_soname:=soname
 termbox_a:=libtermbox.a
 termbox_h:=termbox.h
+
+ifeq ($(shell uname), Darwin)
+	termbox_so:=libtermbox.dylib
+	termbox_so_x:=libtermbox.$(termbox_so_version_abi).dylib
+	termbox_so_x_y_z:=libtermbox.$(termbox_so_version_abi).$(termbox_so_version_minor_patch).dylib
+	termbox_ld_soname:=install_name
+endif
 
 all: $(termbox_a) $(termbox_so_x_y_z) $(termbox_demos)
 
@@ -17,7 +25,7 @@ $(termbox_a): $(termbox_objects)
 	$(AR) rcs $@ $(termbox_objects)
 
 $(termbox_so_x_y_z): $(termbox_objects)
-	$(CC) -shared -Wl,-h,$(termbox_so_x) $(termbox_objects) -o $@
+	$(CC) -shared -Wl,-$(termbox_ld_soname),$(termbox_so_x) $(termbox_objects) -o $@
 
 $(termbox_demos): %: %.c $(termbox_a)
 	$(CC) $(termbox_cflags) $^ -o $@
