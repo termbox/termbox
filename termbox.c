@@ -1070,10 +1070,8 @@ static void get_term_size(int *w, int *h) {
 
     ioctl(inout, TIOCGWINSZ, &sz);
 
-    if (w)
-        *w = sz.ws_col;
-    if (h)
-        *h = sz.ws_row;
+    *w = sz.ws_col > 0 ? sz.ws_col : 80;
+    *h = sz.ws_row > 0 ? sz.ws_row : 24;
 }
 
 static void update_term_size(void) {
@@ -1082,8 +1080,8 @@ static void update_term_size(void) {
 
     ioctl(inout, TIOCGWINSZ, &sz);
 
-    termw = sz.ws_col;
-    termh = sz.ws_row;
+    termw = sz.ws_col > 0 ? sz.ws_col : 80;
+    termh = sz.ws_row > 0 ? sz.ws_row : 24;
 }
 
 static void send_attr(uint16_t fg, uint16_t bg) {
