@@ -12,7 +12,7 @@ termbox_ld_soname:=soname
 termbox_a:=libtermbox.a
 termbox_h:=termbox.h
 
-ifeq ($(shell uname), Darwin)
+ifeq ($(shell $(CC) -dumpmachine | grep -q apple && echo 1), 1)
 	termbox_so:=libtermbox.dylib
 	termbox_so_x:=libtermbox.$(termbox_so_version_abi).dylib
 	termbox_so_x_y_z:=libtermbox.$(termbox_so_version_abi).$(termbox_so_version_minor_patch).dylib
