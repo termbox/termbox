@@ -3,3 +3,4 @@ libtermbox.*
 demo/keyboard
 demo/output
 demo/paint
+demo/truecolor

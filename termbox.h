@@ -125,9 +125,9 @@ extern "C" {
  * combine attributes and a single color. See also struct tb_cell's fg and bg
  * fields.
  */
-#define TB_BOLD      0x0100
-#define TB_UNDERLINE 0x0200
-#define TB_REVERSE   0x0400
+#define TB_BOLD      0x01000000
+#define TB_UNDERLINE 0x02000000
+#define TB_REVERSE   0x04000000
 
 /* A cell, single conceptual entity on the terminal screen. The terminal screen
  * is basically a 2d array of cells. It has the following fields:
@@ -137,8 +137,8 @@ extern "C" {
  */
 struct tb_cell {
     uint32_t ch;
-    uint16_t fg;
-    uint16_t bg;
+    uint32_t fg;
+    uint32_t bg;
 };
 
 #define TB_EVENT_KEY    1
@@ -195,7 +195,7 @@ SO_IMPORT int tb_height(void);
  * color/attributes set by tb_set_clear_attributes() function.
  */
 SO_IMPORT void tb_clear(void);
-SO_IMPORT void tb_set_clear_attributes(uint16_t fg, uint16_t bg);
+SO_IMPORT void tb_set_clear_attributes(uint32_t fg, uint32_t bg);
 
 /* Synchronizes the internal back buffer with the terminal. */
 SO_IMPORT void tb_present(void);
@@ -212,8 +212,8 @@ SO_IMPORT void tb_set_cursor(int cx, int cy);
  * position.
  */
 SO_IMPORT void tb_put_cell(int x, int y, const struct tb_cell *cell);
-SO_IMPORT void tb_change_cell(int x, int y, uint32_t ch, uint16_t fg,
-                              uint16_t bg);
+SO_IMPORT void tb_change_cell(int x, int y, uint32_t ch, uint32_t fg,
+                              uint32_t bg);
 
 /* Copies the buffer from 'cells' at the specified position, assuming the
  * buffer is a two-dimensional array of size ('w' x 'h'), represented as a
@@ -260,6 +260,7 @@ SO_IMPORT int tb_select_input_mode(int mode);
 #define TB_OUTPUT_256       2
 #define TB_OUTPUT_216       3
 #define TB_OUTPUT_GRAYSCALE 4
+#define TB_OUTPUT_TRUECOLOR 5
 
 /* Sets the termbox output mode. Termbox has three output options:
  * 1. TB_OUTPUT_NORMAL     => [1..8]
@@ -289,6 +290,9 @@ SO_IMPORT int tb_select_input_mode(int mode);
  * 4. TB_OUTPUT_GRAYSCALE  => [0..23]
  *    This mode supports the 4th range of the 256 mode only.
  *    But you dont need to provide an offset.
+ *
+ * 4. TB_OUTPUT_TRUECOLOR  => [0x00000000..0xFFFFFFFF]
+ *    This mode supports 24-bit true color. Format is 0xRRGGBB.
  *
  * Execute build/src/demo/output to see its impact on your terminal.
  *
