@@ -26,12 +26,16 @@ $(termbox_a): $(termbox_objects)
 
 $(termbox_so_x_y_z): $(termbox_objects)
 	$(CC) -shared -Wl,-$(termbox_ld_soname),$(termbox_so_x) $(termbox_objects) -o $@
+	ln -sf $@ $(termbox_so)
 
 $(termbox_demos): %: %.c $(termbox_a)
 	$(CC) $(termbox_cflags) $^ -o $@
 
 $(termbox_objects): %.o: %.c
 	$(CC) -c $(termbox_cflags) $< -o $@
+
+test: all
+	docker build -f tests/Dockerfile .
 
 install: $(termbox_a) $(termbox_so_x_y_z)
 	install -d $(DESTDIR)$(prefix)/lib
@@ -45,4 +49,4 @@ install: $(termbox_a) $(termbox_so_x_y_z)
 clean:
 	rm -f $(termbox_so_x_y_z) $(termbox_a) $(termbox_objects) $(termbox_demos)
 
-.PHONY: all install clean
+.PHONY: all test install clean
