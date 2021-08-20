@@ -46,7 +46,7 @@ Make a pull request if you would like your termbox project listed here.
 - https://github.com/nsf/termbox - Python
 - https://github.com/adsr/termbox-php - PHP
 - https://github.com/gchp/rustbox - Rust
-- https://github.com/fouric/cl-termbox - Common Lisp
+- https://github.com/cl-fui/cl-termbox - Common Lisp
 - https://github.com/zyedidia/termbox-d - D
 - https://github.com/dduan/Termbox - Swift
 - https://github.com/andrewsuzuki/termbox-crystal - Crystal
