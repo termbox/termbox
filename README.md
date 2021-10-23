@@ -1,5 +1,8 @@
 # termbox
 
+*New projects should consider using [termbox2][0], a rewrite of termbox with
+stricter error checking and some additional features.*
+
 termbox is a minimal, legacy-free alternative to ncurses, suitable for building
 text-based user interfaces.
 
@@ -122,3 +125,6 @@ v1.0.0:
 - API: Add TB_INPUT_CURRENT.
 - Move python module to its own directory and update it due to changes in the
   termbox library.
+
+
+[0]: https://github.com/termbox/termbox2
