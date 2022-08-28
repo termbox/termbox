@@ -271,7 +271,7 @@ SO_IMPORT int tb_select_input_mode(int mode);
  *    Example usage:
  *        tb_change_cell(x, y, '@', TB_BLACK | TB_BOLD, TB_RED);
  *
- * 2. TB_OUTPUT_256        => [0..256]
+ * 2. TB_OUTPUT_256        => [0..255]
  *    In this mode you can leverage the 256 terminal mode:
  *    0x00 - 0x07: the 8 colors as in TB_OUTPUT_NORMAL
  *    0x08 - 0x0f: TB_* | TB_BOLD
@@ -282,7 +282,7 @@ SO_IMPORT int tb_select_input_mode(int mode);
  *        tb_change_cell(x, y, '@', 184, 240);
  *        tb_change_cell(x, y, '@', 0xb8, 0xf0);
  *
- * 3. TB_OUTPUT_216        => [0..216]
+ * 3. TB_OUTPUT_216        => [0..215]
  *    This mode supports the 3rd range of the 256 mode only.
  *    But you don't need to provide an offset.
  *
