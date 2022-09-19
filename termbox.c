@@ -1247,6 +1247,8 @@ static int wait_fill_event(struct tb_event *event, struct timeval *timeout) {
         int result = select(maxfd + 1, &events, 0, 0, timeout);
         if (!result)
             return 0;
+        if (result < 0)
+            return -1;
 
         if (FD_ISSET(inout, &events)) {
             event->type = TB_EVENT_KEY;
