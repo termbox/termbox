@@ -59,6 +59,7 @@ Make a pull request if you would like your termbox project listed here.
 - https://github.com/ndreynolds/ex_termbox - Elixir
 - https://github.com/bmsauer/termbox-ada - Ada
 - https://github.com/luxint/termbox - newLISP
+- https://github.com/sanko/Termbox.pm - Perl
 
 ##### Other implementations
 
