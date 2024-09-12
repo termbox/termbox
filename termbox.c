@@ -753,7 +753,7 @@ int tb_init_fd(int inout_) {
 
 int tb_init_file(const char *name) { return tb_init_fd(open(name, O_RDWR)); }
 
-int tb_init(void) { return tb_init_file("/dev/tty"); }
+int tb_init(void) { return tb_init_fd(STDOUT_FILENO); }
 
 void tb_shutdown(void) {
     if (termw == -1) {
