@@ -46,7 +46,14 @@ install: $(termbox_a) $(termbox_so_x_y_z)
 	ln -sf $(termbox_so_x_y_z) $(DESTDIR)$(prefix)/lib/$(termbox_so)
 	install -p -m 644 $(termbox_h) $(DESTDIR)$(prefix)/include/$(termbox_h)
 
+uninstall:
+	rm -f $(DESTDIR)$(prefix)/lib/$(termbox_a)
+	rm -f $(DESTDIR)$(prefix)/lib/$(termbox_so_x_y_z)
+	rm -f $(DESTDIR)$(prefix)/lib/$(termbox_so_x)
+	rm -f $(DESTDIR)$(prefix)/lib/$(termbox_so)
+	rm -f $(DESTDIR)$(prefix)/include/$(termbox_h)
+
 clean:
 	rm -f $(termbox_so_x_y_z) $(termbox_a) $(termbox_objects) $(termbox_demos)
 
-.PHONY: all test install clean
+.PHONY: all test install clean uninstall
