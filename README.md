@@ -60,6 +60,7 @@ Make a pull request if you would like your termbox project listed here.
 - https://github.com/bmsauer/termbox-ada - Ada
 - https://github.com/luxint/termbox - newLISP
 - https://github.com/sanko/Termbox.pm - Perl
+- https://codeberg.org/luxanna/hare-termbox - Harelang
 
 ##### Other implementations
 
